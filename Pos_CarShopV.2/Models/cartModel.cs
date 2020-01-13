@@ -13,7 +13,6 @@ namespace Pos_CarShopV._2.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-
         public string productType { get; set; }
         public string productName { get; set; }
         public string brand { get; set; }

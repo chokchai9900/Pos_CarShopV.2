@@ -86,6 +86,8 @@ namespace Pos_CarShopV._2
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            var cartData = _GetCartservice.Find(it => true).ToList();
+            cartGridView.DataSource = cartData;
             timer1.Start();
             time.Text = DateTime.Now.ToLongTimeString();
             date.Text = DateTime.Now.ToLongDateString();

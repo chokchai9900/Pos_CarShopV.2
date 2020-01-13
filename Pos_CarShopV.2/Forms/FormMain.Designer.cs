@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.SaleSumButton = new FontAwesome.Sharp.IconButton();
             this.EditProductButton = new FontAwesome.Sharp.IconButton();
@@ -42,15 +44,24 @@
             this.Banner = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.LbTltieChildForm = new System.Windows.Forms.Label();
-            this.IconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.time = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.Label();
+            this.IconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.time = new System.Windows.Forms.Label();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Closeicon = new FontAwesome.Sharp.IconPictureBox();
             this.WindowMaximizeIcon = new FontAwesome.Sharp.IconPictureBox();
             this.WindowMinimizeIcon = new FontAwesome.Sharp.IconPictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cartGridView = new System.Windows.Forms.DataGridView();
+            this._id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,6 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Closeicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WindowMaximizeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WindowMinimizeIcon)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -254,7 +267,7 @@
             this.Banner.Image = ((System.Drawing.Image)(resources.GetObject("Banner.Image")));
             this.Banner.Location = new System.Drawing.Point(220, 0);
             this.Banner.Name = "Banner";
-            this.Banner.Size = new System.Drawing.Size(953, 92);
+            this.Banner.Size = new System.Drawing.Size(1271, 92);
             this.Banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Banner.TabIndex = 1;
             this.Banner.TabStop = false;
@@ -264,11 +277,13 @@
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.panelTitleBar.Controls.Add(this.LbTltieChildForm);
+            this.panelTitleBar.Controls.Add(this.date);
             this.panelTitleBar.Controls.Add(this.IconCurrentChildForm);
+            this.panelTitleBar.Controls.Add(this.time);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 92);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(953, 48);
+            this.panelTitleBar.Size = new System.Drawing.Size(1271, 48);
             this.panelTitleBar.TabIndex = 2;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -281,6 +296,18 @@
             this.LbTltieChildForm.Size = new System.Drawing.Size(81, 29);
             this.LbTltieChildForm.TabIndex = 1;
             this.LbTltieChildForm.Text = "หน้าหลัก";
+            // 
+            // date
+            // 
+            this.date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.date.AutoSize = true;
+            this.date.Font = new System.Drawing.Font("Prompt", 14.25F);
+            this.date.Location = new System.Drawing.Point(807, 15);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(55, 29);
+            this.date.TabIndex = 2;
+            this.date.Text = "Date";
+            this.date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // IconCurrentChildForm
             // 
@@ -296,39 +323,27 @@
             this.IconCurrentChildForm.TabStop = false;
             this.IconCurrentChildForm.Click += new System.EventHandler(this.IconCurrentChildForm_Click);
             // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panelDesktop.Controls.Add(this.pictureBox2);
-            this.panelDesktop.Controls.Add(this.date);
-            this.panelDesktop.Controls.Add(this.time);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(220, 140);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(953, 508);
-            this.panelDesktop.TabIndex = 3;
-            // 
             // time
             // 
+            this.time.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.time.AutoSize = true;
-            this.time.Font = new System.Drawing.Font("Prompt", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.time.Location = new System.Drawing.Point(13, 3);
+            this.time.Font = new System.Drawing.Font("Prompt", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.time.Location = new System.Drawing.Point(1073, 1);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(103, 53);
+            this.time.Size = new System.Drawing.Size(95, 49);
             this.time.TabIndex = 1;
             this.time.Text = "Time";
             this.time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // date
+            // panelDesktop
             // 
-            this.date.AutoSize = true;
-            this.date.Font = new System.Drawing.Font("Prompt", 14.25F);
-            this.date.Location = new System.Drawing.Point(17, 60);
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(55, 29);
-            this.date.TabIndex = 2;
-            this.date.Text = "Date";
-            this.date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDesktop.Controls.Add(this.pictureBox2);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelDesktop.Location = new System.Drawing.Point(220, 140);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(944, 508);
+            this.panelDesktop.TabIndex = 3;
             // 
             // pictureBox2
             // 
@@ -336,9 +351,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(280, 120);
+            this.pictureBox2.Location = new System.Drawing.Point(222, 120);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(340, 205);
+            this.pictureBox2.Size = new System.Drawing.Size(447, 240);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -350,7 +365,7 @@
             this.Closeicon.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.Closeicon.IconColor = System.Drawing.Color.White;
             this.Closeicon.IconSize = 36;
-            this.Closeicon.Location = new System.Drawing.Point(1135, 5);
+            this.Closeicon.Location = new System.Drawing.Point(1453, 5);
             this.Closeicon.Name = "Closeicon";
             this.Closeicon.Size = new System.Drawing.Size(32, 32);
             this.Closeicon.TabIndex = 4;
@@ -365,7 +380,7 @@
             this.WindowMaximizeIcon.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.WindowMaximizeIcon.IconColor = System.Drawing.Color.Gainsboro;
             this.WindowMaximizeIcon.IconSize = 36;
-            this.WindowMaximizeIcon.Location = new System.Drawing.Point(1097, 5);
+            this.WindowMaximizeIcon.Location = new System.Drawing.Point(1415, 5);
             this.WindowMaximizeIcon.Name = "WindowMaximizeIcon";
             this.WindowMaximizeIcon.Size = new System.Drawing.Size(32, 32);
             this.WindowMaximizeIcon.TabIndex = 5;
@@ -380,7 +395,7 @@
             this.WindowMinimizeIcon.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.WindowMinimizeIcon.IconColor = System.Drawing.Color.Gainsboro;
             this.WindowMinimizeIcon.IconSize = 36;
-            this.WindowMinimizeIcon.Location = new System.Drawing.Point(1059, 5);
+            this.WindowMinimizeIcon.Location = new System.Drawing.Point(1377, 5);
             this.WindowMinimizeIcon.Name = "WindowMinimizeIcon";
             this.WindowMinimizeIcon.Size = new System.Drawing.Size(32, 32);
             this.WindowMinimizeIcon.TabIndex = 6;
@@ -391,11 +406,112 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.cartGridView);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(1162, 140);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(329, 508);
+            this.panel1.TabIndex = 7;
+            // 
+            // cartGridView
+            // 
+            this.cartGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cartGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cartGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.cartGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.cartGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cartGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.cartGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cartGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._id,
+            this.productType,
+            this.productName,
+            this.brand,
+            this.price,
+            this.discription});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Prompt", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cartGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.cartGridView.Location = new System.Drawing.Point(12, 35);
+            this.cartGridView.Name = "cartGridView";
+            this.cartGridView.Size = new System.Drawing.Size(305, 280);
+            this.cartGridView.TabIndex = 6;
+            // 
+            // _id
+            // 
+            this._id.DataPropertyName = "Id";
+            this._id.HeaderText = "ID สินค้า";
+            this._id.Name = "_id";
+            this._id.Visible = false;
+            // 
+            // productType
+            // 
+            this.productType.DataPropertyName = "productType";
+            this.productType.HeaderText = "ประเภทสินค้า";
+            this.productType.Name = "productType";
+            this.productType.Visible = false;
+            // 
+            // productName
+            // 
+            this.productName.DataPropertyName = "productName";
+            this.productName.HeaderText = "ชื่อสินค้า";
+            this.productName.Name = "productName";
+            // 
+            // brand
+            // 
+            this.brand.DataPropertyName = "brand";
+            this.brand.HeaderText = "ยี่ห้อ";
+            this.brand.Name = "brand";
+            this.brand.Visible = false;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "ราคาสินค้า";
+            this.price.Name = "price";
+            // 
+            // discription
+            // 
+            this.discription.DataPropertyName = "discription";
+            this.discription.HeaderText = "รายละเอียดสินค้า";
+            this.discription.Name = "discription";
+            this.discription.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Prompt", 14.25F);
+            this.label1.Location = new System.Drawing.Point(8, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 29);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "รายการสินค้า";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 648);
+            this.ClientSize = new System.Drawing.Size(1491, 648);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.WindowMinimizeIcon);
             this.Controls.Add(this.WindowMaximizeIcon);
             this.Controls.Add(this.Closeicon);
@@ -416,11 +532,13 @@
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconCurrentChildForm)).EndInit();
             this.panelDesktop.ResumeLayout(false);
-            this.panelDesktop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Closeicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WindowMaximizeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WindowMinimizeIcon)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,6 +566,15 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label time;
         private System.Windows.Forms.Label date;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView cartGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discription;
     }
 }
 
