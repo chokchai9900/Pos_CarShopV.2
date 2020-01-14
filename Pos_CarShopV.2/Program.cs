@@ -16,7 +16,7 @@ namespace Pos_CarShopV._2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            Application.Run(new SplashSceen());
         }
     }
 }

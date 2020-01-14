@@ -108,8 +108,10 @@
             this.discriptionBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.discriptionBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.discriptionBox.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discriptionBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.discriptionBox.Location = new System.Drawing.Point(84, 358);
             this.discriptionBox.Name = "discriptionBox";
+            this.discriptionBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.discriptionBox.Size = new System.Drawing.Size(434, 25);
             this.discriptionBox.TabIndex = 20;
             // 
