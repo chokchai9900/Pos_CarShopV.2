@@ -27,5 +27,11 @@ namespace Pos_CarShopV._2
             _GetCartservice = database.GetCollection<cartModel>("cart");
             _GetLogtservice = database.GetCollection<logModel>("log");
         }
+
+        private void CheckStock_Load(object sender, EventArgs e)
+        {
+            var productData = _GetDatabaseservice.Find(it => true).ToList();
+            dataGridView.DataSource = productData;
+        }
     }
 }
