@@ -17,12 +17,12 @@ namespace Pos_CarShopV._2
             InitializeComponent();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void SplashSceenTimer_Tick(object sender, EventArgs e)
         {
             panel2.Width += 15;
             if (panel2.Width >= 700)
             {
-                timer1.Stop();
+                SplashSceenTimer.Stop();
                 FormMain mainform = new FormMain();
                 mainform.Show();
                 this.Hide();

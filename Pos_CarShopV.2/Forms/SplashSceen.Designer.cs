@@ -33,7 +33,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.SplashSceenTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,10 +67,10 @@
             this.panel2.Size = new System.Drawing.Size(1, 20);
             this.panel2.TabIndex = 2;
             // 
-            // timer1
+            // SplashSceenTimer
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.SplashSceenTimer.Enabled = true;
+            this.SplashSceenTimer.Tick += new System.EventHandler(this.SplashSceenTimer_Tick);
             // 
             // SplashSceen
             // 
@@ -96,6 +96,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer SplashSceenTimer;
     }
 }

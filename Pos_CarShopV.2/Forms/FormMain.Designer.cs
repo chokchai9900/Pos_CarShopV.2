@@ -302,7 +302,7 @@
             this.date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.date.AutoSize = true;
             this.date.Font = new System.Drawing.Font("Prompt", 14.25F);
-            this.date.Location = new System.Drawing.Point(807, 15);
+            this.date.Location = new System.Drawing.Point(746, 15);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(55, 29);
             this.date.TabIndex = 2;
@@ -446,7 +446,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Prompt", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Purple;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;

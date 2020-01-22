@@ -83,6 +83,11 @@ namespace Pos_CarShopV._2
                 IconCurrentChildForm.IconColor = color;
             }
         }
+        public void ResetCart()
+        {
+            var data = _GetCartservice.Find(it => true).ToList();
+            cartGridView.DataSource = data;
+        }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -158,7 +163,7 @@ namespace Pos_CarShopV._2
         private void TradeButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new Trade());
+            OpenChildForm(new Trade(this));
         }
 
         private void AddProductButton_Click(object sender, EventArgs e)
